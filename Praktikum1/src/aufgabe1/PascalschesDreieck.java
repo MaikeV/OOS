@@ -1,3 +1,5 @@
+package aufgabe1;
+
 public class PascalschesDreieck {
     private int depth;
     private int[][] triangle;
