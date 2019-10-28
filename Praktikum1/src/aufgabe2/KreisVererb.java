@@ -7,6 +7,14 @@ public class KreisVererb extends Point {
         super();
     }
 
+    public int getRadius() {
+        return radius;
+    }
+
+    public void setRadius(int radius) {
+        this.radius = radius;
+    }
+
     KreisVererb(int radius, int x, int y) {
         super(x, y);
         this.radius = radius;

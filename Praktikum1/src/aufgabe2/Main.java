@@ -18,5 +18,9 @@ public class Main {
         }
 
         System.out.println(kreis.getLocation());
+
+        kreis.move(2, 3);
+
+        System.out.println("Location nach move:" + kreis.getLocation());
     }
 }

@@ -1,13 +1,10 @@
 package aufgabe1;
 
 public class PascalschesDreieck {
-    private int depth;
+    final int depth = 10;
     private int[][] triangle;
 
-    PascalschesDreieck() {}
-
-    PascalschesDreieck(int depth) {
-        this.depth = depth;
+    PascalschesDreieck() {
         this.triangle = new int[depth][];
     }
 
