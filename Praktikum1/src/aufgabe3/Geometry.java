@@ -2,10 +2,8 @@ package aufgabe3;
 
 interface Geometry<T> {
     @Override
-    public abstract String toString();
-    public abstract Object clone();
-    public abstract boolean equals(Object t);
-    public abstract double area();
-
-
+    public String toString();
+    public Object clone();
+    public boolean equals(Object t);
+    public double area();
 }
