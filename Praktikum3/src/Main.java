@@ -15,38 +15,38 @@ public class Main {
 
         try {
             admin.addUser(u1);
-        } catch (UserException | IOException | ClassNotFoundException e) {
+        } catch (UserException | IOException | ClassNotFoundException | DBNotInitializedException e) {
             e.printStackTrace();
         }
 
         try {
             admin.addUser(u3);
-        } catch (UserException | IOException | ClassNotFoundException e) {
+        } catch (UserException | IOException | ClassNotFoundException | DBNotInitializedException e) {
             e.printStackTrace();
         }
 
         try {
             admin.addUser(u2);
-        } catch (UserException | IOException | ClassNotFoundException e) {
+        } catch (UserException | IOException | ClassNotFoundException | DBNotInitializedException e) {
             e.printStackTrace();
         }
 
         try {
             admin.deleteUser(u2);
-        } catch (UserDoesNotExistException | IOException | ClassNotFoundException e) {
+        } catch (UserDoesNotExistException | IOException | ClassNotFoundException | DBNotInitializedException e) {
             e.printStackTrace();
         }
 
         try {
             if (admin.userOK(u2)) System.out.println("u1 OK");
             if (admin.userOK(u1)) System.out.println("u2 OK");
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException | DBNotInitializedException e) {
             e.printStackTrace();
         }
 
         try {
             System.out.println(admin.printDB());
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException | DBNotInitializedException e) {
             e.printStackTrace();
         }
     }

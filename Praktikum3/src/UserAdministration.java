@@ -35,7 +35,7 @@ public interface UserAdministration {
      *
      * @see UserAdministrationAdmin initializeDB
      */
-    void initializeDB() throws IOException;
+    void initializeDB() throws IOException, OldDBNotDeletedException;
 
     /**
      * <p>Liest die Benutzerliste aus der DB aus und deserialisiert sie</p>

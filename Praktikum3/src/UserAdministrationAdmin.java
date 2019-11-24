@@ -115,7 +115,7 @@ public class UserAdministrationAdmin implements UserAdministration {
 
     /**
      * @see UserAdministration
-     * @return
+     * @return gibt die Liste der in der DB gespeicherten Benutzer zurueck
      * @throws IOException
      * @throws ClassNotFoundException
      * @throws DBNotInitializedException wird geworfen, falls die DB nicht initialisiert ist
@@ -137,9 +137,17 @@ public class UserAdministrationAdmin implements UserAdministration {
     /**
      * @see UserAdministration
      * @throws IOException
+     * @throws OldDBNotDeletedException wird geworfen, wenn die alte DB nicht geloescht werden konnte.
      */
     @Override
-    public void initializeDB() throws IOException {
+    public void initializeDB() throws IOException, OldDBNotDeletedException {
+        File file = new File("UserDB.s");
+        boolean exists = file.exists();
+
+        if (exists && !file.delete()) {
+            throw new OldDBNotDeletedException("failed to delete old DB");
+        }
+
         userList = new ArrayList<User>();
 
         FileOutputStream fos = new FileOutputStream("UserDB.s");
@@ -200,6 +208,15 @@ class UserDoesNotExistException extends Exception {
  */
 class DBNotInitializedException extends Exception {
     DBNotInitializedException(String output) {
+        super(output);
+    }
+}
+
+/**
+ * Eigene Exception, die geworfen wird, wenn das Loeschen der veralteten DB fehlgeschlagen ist.
+ */
+class OldDBNotDeletedException extends Exception {
+    OldDBNotDeletedException(String output) {
         super(output);
     }
 }

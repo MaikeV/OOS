@@ -1,16 +1,11 @@
-import junit.framework.TestSuite;
-import junit.framework.Test;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
+@RunWith(Suite.class)
+@Suite.SuiteClasses({UserTest.class, UserAdministrationAdminTest.class})
 public class Tests {
-    public static Test suite() {
-        TestSuite suite =  new TestSuite("Tests Praktikum 3");
-        suite.addTestSuite(UserTest.class);
-        suite.addTestSuite(UserAdministrationAdminTest.class);
-
-        return suite;
-    }
-
     public static void main(String[] args) {
-        junit.textui.TestRunner.run(Tests.suite());
+        JUnitCore.runClasses(Tests.class);
     }
 }
