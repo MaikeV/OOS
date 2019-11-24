@@ -3,8 +3,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotEquals;
-
 public class UserTest {
     private User u1, u2, u3;
 
@@ -20,9 +18,8 @@ public class UserTest {
     public void tearDown() throws Exception {
     }
 
-    /**
+    /*
      * Testen der Equals Methode
-     * @see User equals
      */
     @Test
     public void testEquals() {
