@@ -83,7 +83,7 @@ public class UserAdministrationAdmin implements UserAdministration {
             throw new DBNotInitializedException("Database is not initialized");
         }
 
-        deserialize();
+        userList = deserialize();
 
         if(!userList.contains(user)) {
             throw new UserDoesNotExistException("User does not exist!");
@@ -139,8 +139,8 @@ public class UserAdministrationAdmin implements UserAdministration {
      * @throws IOException
      * @throws OldDBNotDeletedException wird geworfen, wenn die alte DB nicht geloescht werden konnte.
      */
-    @Override
-    public void initializeDB() throws IOException, OldDBNotDeletedException {
+
+    void initializeDB() throws IOException, OldDBNotDeletedException {
         File file = new File("UserDB.s");
         boolean exists = file.exists();
 

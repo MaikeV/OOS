@@ -26,4 +26,10 @@ public class UserTest {
         Assert.assertEquals(u1, u2);
         Assert.assertNotEquals(u2, u3);
     }
+
+    @Test
+    public void testConstructor() {
+        Assert.assertEquals(u1.userId, "user");
+        Assert.assertEquals(u1.password, "123456".toCharArray());
+    }
 }

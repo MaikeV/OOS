@@ -272,7 +272,7 @@ public class UserAdministrationAdminTest {
             fail("DB should be initialized without problems");
         }
 
-        users1.add(users1.size(), u1);
+        users1.add(u1);
 
         try {
             admin.updateDB(users1);
