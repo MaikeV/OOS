@@ -148,7 +148,7 @@ public class UserAdministrationAdmin implements UserAdministration {
     public void initializeDB() throws IOException, OldDBNotDeletedException {
         File file = new File(dbName + ".s");
         boolean exists = file.exists();
-
+        System.out.println("AYOOO");
         if (exists && !file.delete()) {
             throw new OldDBNotDeletedException("failed to delete old DB");
         }
