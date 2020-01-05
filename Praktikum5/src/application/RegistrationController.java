@@ -14,6 +14,12 @@ public class RegistrationController {
     @FXML TextField tf_passwordConfirm;
     @FXML Label lbl_error;
 
+    private Main main;
+
+    public void setMainApplication(Main main) {
+        this.main = main;
+    }
+
     public void register(Event event) {
         if(!tf_password.getText().equals(tf_passwordConfirm.getText())) {
             lbl_error.setText("Die beiden Passwoerter stimmen nicht ueberein!");
@@ -27,8 +33,6 @@ public class RegistrationController {
 
         User newUser = new User(tf_userId.getText(), tf_password.getText().toCharArray());
 
-        System.out.println(newUser.toString());
-
-        Platform.exit();
+        this.main.newUser(newUser);
     }
 }

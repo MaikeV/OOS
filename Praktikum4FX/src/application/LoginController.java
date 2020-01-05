@@ -17,8 +17,6 @@ public class LoginController {
 
     @FXML
     public void login(Event event) {
-        isNew = cb_new.isSelected();
-
         if (tf_userId.getText().equals("") || tf_password.getText().equals("")) {
             return;
         }
@@ -29,5 +27,11 @@ public class LoginController {
         System.out.println("user is new = " + isNew);
 
         Platform.exit();
+    }
+
+    @FXML
+    public void checkbox() {
+        isNew = cb_new.isSelected();
+        System.out.println(isNew);
     }
 }
