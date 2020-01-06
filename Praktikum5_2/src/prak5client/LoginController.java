@@ -31,7 +31,11 @@ public class LoginController {
         }
 
         if(cb_new.isSelected()) {
-            this.main.registerLocal();
+            if (cb_remote.isSelected()) {
+                this.main.registerLocal();
+            } else {
+                this.main.registerRemote();
+            }
         } else {
             User newUser = new User(tf_userId.getText(), tf_password.getText().toCharArray());
 

@@ -24,6 +24,7 @@ public class Client extends Application {
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         admin = new UserAdministrationAdmin("DBlocal");
+        clientOrb = new ClientOrb(address);
         int initializeDB = -1;
 
         while (initializeDB != 0 || initializeDB != 1) {
