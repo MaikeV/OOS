@@ -16,6 +16,12 @@ public class UserAdministrationAdmin implements UserAdministration {
 
     public UserAdministrationAdmin(String name) {
         this.dbName = name;
+
+        File file = new File(dbName + ".s");
+        boolean exists = file.exists();
+        if (exists) {
+            this.isInitialized = true;
+        }
     }
 
     /**
@@ -148,7 +154,7 @@ public class UserAdministrationAdmin implements UserAdministration {
     public void initializeDB() throws IOException, OldDBNotDeletedException {
         File file = new File(dbName + ".s");
         boolean exists = file.exists();
-        System.out.println("AYOOO");
+
         if (exists && !file.delete()) {
             throw new OldDBNotDeletedException("failed to delete old DB");
         }

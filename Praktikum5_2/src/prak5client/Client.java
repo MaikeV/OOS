@@ -27,7 +27,7 @@ public class Client extends Application {
         clientOrb = new ClientOrb(address);
         int initializeDB = -1;
 
-        while (initializeDB != 0 || initializeDB != 1) {
+        while (initializeDB != 0 && initializeDB != 1) {
             System.out.println("Datenbank initialisieren? - 0/1");
             BufferedReader din = new BufferedReader(new InputStreamReader(System.in));
             initializeDB = Integer.parseInt(din.readLine());
